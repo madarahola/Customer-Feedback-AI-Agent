@@ -1,126 +1,80 @@
-#Customer-Feedback-AI-Agent
+# Customer-Feedback-AI-Agent
 
-An automated AI-powered feedback classification and routing system built using n8n workflows integrated with Google Gemini (LLM).
+An AI-powered feedback classification and automation system built using **n8n workflows** and **Google Gemini (LLM)**.
 
-This project demonstrates how Large Language Models can be embedded inside workflow automation tools to create a decision-making AI agent for real business processes.
+This project demonstrates how Large Language Models (LLMs) can be embedded inside workflow automation tools to build a production-ready **AI decision-making agent** for real-world business use cases.
 
-##🖼 Workflow Overview
+---
 
-Below is a high-level overview of the workflow architecture:
-<img width="1405" height="632" alt="image" src="https://github.com/user-attachments/assets/e81fb633-8a08-42fa-b1d4-c89e346eeacd" />
+## 📌 Workflow Overview
 
+Below is a high-level overview of the workflow architecture used in this project:
 
-⚙️ System Architecture & Execution Flow
-1️⃣ Trigger Layer – Form Submission
+<img width="1405" height="632" alt="image" src="https://github.com/user-attachments/assets/1a972d95-249a-4564-8794-c9b629b017a5" />
 
-User submits:
+---
 
-Name
+## ⚙️ Architecture & Execution Flow
 
-Email
+### 1. Trigger Layer – Form Submission
+- The workflow starts when a user submits a feedback form.
+- Input fields include:
+  - Name  
+  - Email  
+  - Feedback message
+- The form submission acts as the event trigger in n8n.
 
-Feedback Message
+---
 
-n8n Webhook/Form Trigger initiates the workflow execution.
+### 2. AI Processing Layer – Gemini LLM
+- User feedback is passed to the **Google Gemini Chat Model**.
+- The AI agent performs **intent classification** on unstructured text.
+- Feedback is categorized into one of the following:
+  - Complaint  
+  - Feature Request  
+  - Appreciation  
 
-2️⃣ AI Processing Layer – Gemini LLM
+This step converts free-text input into structured output.
 
-Feedback text is passed to Google Gemini.
+---
 
-The model performs intent classification.
+### 3. Decision Layer – Merge & Switch Logic
+- AI classification output is merged with form metadata.
+- A **Switch node** evaluates the intent label.
+- Workflow execution branches dynamically based on the classification result.
 
-Output categories:
+---
 
-Complaint
+### 4. Data Persistence Layer – Database Routing
+- Feedback is stored in dedicated database tables:
+  - `complaints`
+  - `feature_requests`
+  - `compliments`
+- Enables clean data separation and downstream analytics.
 
-Feature Request
+---
 
-Appreciation
+### 5. Response Automation – Email Notification
+- An automated confirmation email is sent to the user.
+- Confirms successful submission of feedback.
+- Ensures immediate acknowledgment without manual intervention.
 
-This transforms unstructured text into structured, machine-readable output.
+---
 
-3️⃣ Decision Layer – Merge & Switch Logic
+## 🧠 Key Technical Capabilities
 
-AI output is captured.
+- LLM-based intent classification
+- Event-driven workflow orchestration
+- Dynamic branching logic
+- Structured data storage
+- Automated transactional email handling
+- Fully automated, zero manual sorting
 
-A Switch node dynamically routes execution based on classification.
+---
 
-Ensures deterministic branching behavior inside the workflow.
+## 🚀 Why This Project Matters
 
-4️⃣ Data Persistence Layer – Database Routing
+This is not a traditional chatbot.
 
-Feedback is stored in dedicated tables:
-
-complaints
-
-feature_requests
-
-compliments
-
-Enables structured storage and analytics-ready datasets.
-
-5️⃣ Response Automation Layer – Email Notification
-
-Automatically sends a formatted confirmation email.
-
-Ensures immediate acknowledgment.
-
-Eliminates manual response handling.
-
-🧠 Technical Capabilities Demonstrated
-
-LLM-based Intent Classification
-
-Event-Driven Workflow Automation
-
-Dynamic Branching Logic
-
-Structured Data Routing
-
-Automated Transactional Emailing
-
-Zero Manual Intervention Processing
-
-🚀 Why This Matters
-
-This is not a simple chatbot implementation.
-
-It is a workflow-embedded AI decision engine that:
-
-Converts unstructured feedback into structured business data
-
-Automates routing and storage
-
-Executes conditional logic
-
-Triggers downstream operational tasks
-
-🎯 Real-World Application
-
-This architecture can be extended for:
-
-Customer support automation
-
-Lead qualification systems
-
-Ticket triaging
-
-Sentiment-based escalation workflows
-
-CRM auto-tagging
-
-📌 Production Insight
-
-This project reflects how AI agents are implemented in real-world systems:
-
-Trigger → Reasoning (LLM) → Branching → Action → Storage → Notification
-
-It showcases the integration of:
-
-Workflow orchestration
-
-LLM reasoning
-
-Business rule enforcement
-
-Automated operations
+It is a **workflow-embedded AI agent** that:
+- Interpre
