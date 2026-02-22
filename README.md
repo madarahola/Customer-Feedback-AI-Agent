@@ -3,6 +3,9 @@ Built an AI Feedback Classification Agent using n8n + Gemini
 
 Sharing a snapshot of the workflow I built (see image 👇).
 
+<img width="1405" height="632" alt="image" src="https://github.com/user-attachments/assets/8b36d337-52fb-434a-a2c3-c52ed8574a82" />
+
+
 Here’s what’s happening step-by-step:
 
 🔹 Form Submission Trigger
