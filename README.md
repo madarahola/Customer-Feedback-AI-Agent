@@ -77,4 +77,25 @@ This step converts free-text input into structured output.
 This is not a traditional chatbot.
 
 It is a **workflow-embedded AI agent** that:
-- Interpre
+- Interprets user intent using an LLM
+- Makes routing decisions
+- Executes conditional business logic
+- Persists structured data
+- Triggers operational actions automatically
+
+---
+
+## 🎯 Potential Use Cases
+
+- Customer support ticket classification
+- Feature request tracking systems
+- Sentiment-based feedback analysis
+- CRM tagging and routing
+- Internal helpdesk automation
+
+---
+
+## 🏗️ Production Design Insight
+
+This project follows a real-world AI agent architecture:
+
